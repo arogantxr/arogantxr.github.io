@@ -1,10 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Logged</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Einfache Login-Seite</title>
+  <style>
+    :root{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#111}
+    body{display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;background:linear-gradient(135deg,#f0f4ff,#f7fff0)}
+    .card{width:360px;background:white;border-radius:12px;box-shadow:0 8px 30px rgba(40,40,80,0.08);padding:24px}
+    h1{margin:0 0 12px;font-size:20px}
+    label{display:block;font-size:13px;margin-top:10px}
+    input{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9f2;margin-top:6px;font-size:14px}
+    button{margin-top:16px;width:100%;padding:10px;border-radius:10px;border:0;background:#2b6cff;color:white;font-weight:600;cursor:pointer}
+    .hint{font-size:12px;color:#666;margin-top:8px}
+    .protected{display:none}
+    .ok{color:green}
+    .err{color:#c44}
+    .small{font-size:12px;color:#666;margin-top:6px}
+  </style>
 </head>
 <body>
-  <p>You are now logged in.</p>
+  <div class="card" id="app">
+    <div id="loginView">
+      <h1>Login</h1>
+      <label for="user">Benutzername</label>
+      <input id="user" autocomplete="username" value="" />
+      <label for="pass">Passwort</label>
+      <input id="pass" type="password" autocomplete="current-password" />
+      <button id="btn">Einloggen</button>
+      <div class="hint">Tipp: Benutzer: <strong>admin</strong> | Passwort: <strong>123456</strong></div>
+      <div id="msg" class="small"></div>
+    </div>
+
+    <div id="protectedView" class="protected">
+      <h1>Geschützter Bereich</h1>
+      <p class="small">Willkommen, <span id="who"></span>! Du bist eingeloggt.</p>
+      <p class="small">Dies ist eine einfache clientseitige Demo — nicht für Produktion.</p>
+      <button id="logout">Ausloggen</button>
+    </div>
+  </div>
+
+  <script>
+    // Vordefinierte Anmeldedaten (wie vom Nutzer gewünscht)
+    const VALID = { user: 'admin', pass: '123456' };
+
+    const userIn = document.getElementById('user');
+    const passIn = document.getElementById('pass');
+    const btn = document.getElementById('btn');
+    const msg = document.getElementById('msg');
+    const loginView = document.getElementById('loginView');
+    const protectedView = document.getElementById('protectedView');
+    const who = document.getElementById('who');
+    const logout = document.getElementById('logout');
+
+    function showProtected(name) {
+      loginView.style.display = 'none';
+      protectedView.style.display = 'block';
+      who.textContent = name;
+    }
+
+    function showLogin() {
+      loginView.style.display = 'block';
+      protectedView.style.display = 'none';
+      msg.textContent = '';
+      passIn.value = '';
+    }
+
+    // Sitzung merken (einfach) — nur für Demo
+    const SESSION_KEY = 'simple_demo_logged_in';
+    if (localStorage.getItem(SESSION_KEY) === VALID.user) {
+      showProtected(VALID.user);
+    }
+
+    btn.addEventListener('click', () => {
+      const u = userIn.value.trim();
+      const p = passIn.value;
+      if (u === VALID.user && p === VALID.pass) {
+        localStorage.setItem(SESSION_KEY, VALID.user);
+        msg.textContent = 'Erfolgreich eingeloggt.';
+        msg.className = 'small ok';
+        showProtected(u);
+      } else {
+        msg.textContent = 'Benutzername oder Passwort falsch.';
+        msg.className = 'small err';
+      }
+    });
+
+    logout.addEventListener('click', () => {
+      localStorage.removeItem(SESSION_KEY);
+      showLogin();
+    });
+
+    // Enter-Taste für bequemes Einloggen
+    [userIn, passIn].forEach(i => i.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') btn.click();
+    }));
+  </script>
 </body>
 </html>
