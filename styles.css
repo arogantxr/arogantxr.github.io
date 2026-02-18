@@ -1,0 +1,437 @@
+/* ========== Custom Colors ========== */
+:root {
+    --primary-red: #c41e3a;
+    --primary-beige: #d4a574;
+    --light-beige: #fef5f1;
+    --light-gray: #f8f8f8;
+    --dark-text: #333;
+    --medium-text: #555;
+}
+
+/* ========== Global Styles ========== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark-text);
+    background-color: #fff;
+}
+
+/* ========== Navbar Customization ========== */
+.navbar {
+    background-color: var(--primary-red) !important;
+    box-shadow: 0 2px 8px rgba(196, 30, 58, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.3rem !important;
+}
+
+.navbar-brand .tagline {
+    font-size: 0.75rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    transition: border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.25rem !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    border-bottom-color: #fff !important;
+}
+
+/* ========== Hero Section ========== */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff 0%, var(--light-beige) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--primary-red);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.hero h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--dark-text);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.hero .subtitle {
+    font-size: 1.1rem;
+    color: var(--medium-text);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.spec-badge {
+    display: inline-block;
+    background: #fff;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--primary-beige);
+    font-weight: 500;
+    margin: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* ========== Cards ========== */
+.option-card,
+.contact-card,
+.service-card,
+.step,
+.simple-step,
+.method-card {
+    background: #fff;
+    border-top: 3px solid var(--primary-red);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.option-card:hover,
+.contact-card:hover,
+.service-card:hover,
+.step:hover,
+.method-card:hover {
+    box-shadow: 0 4px 12px rgba(196, 30, 58, 0.15);
+}
+
+.option-card h3,
+.contact-card h3,
+.service-card h4 {
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+}
+
+/* ========== Sections ========== */
+.section {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(196, 30, 58, 0.1);
+    border-left: 4px solid var(--primary-beige);
+    padding: 3rem;
+    margin: 3rem 0;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-red);
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.section h3 {
+    font-size: 1.5rem;
+    color: var(--dark-text);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.section h4 {
+    font-size: 1.1rem;
+    color: var(--dark-text);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+/* ========== Columns with Background ========== */
+.col-with-bg {
+    background: var(--light-gray);
+    border-left: 3px solid var(--primary-beige);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.col-with-bg h3 {
+    color: var(--primary-red);
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+
+.col-with-bg ul {
+    list-style: none;
+    padding: 0;
+}
+
+.col-with-bg li {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    color: var(--medium-text);
+}
+
+.col-with-bg li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-beige);
+    font-weight: bold;
+}
+
+/* ========== Buttons ========== */
+.btn-primary {
+    background-color: var(--primary-red) !important;
+    border-color: var(--primary-red) !important;
+}
+
+.btn-primary:hover {
+    background-color: #a01830 !important;
+    border-color: #a01830 !important;
+}
+
+.btn-secondary {
+    background-color: var(--light-gray) !important;
+    color: var(--primary-beige) !important;
+    border: 1px solid var(--primary-beige) !important;
+}
+
+.btn-secondary:hover {
+    background-color: #fff !important;
+}
+
+/* ========== FAQ Styles ========== */
+.faq-item {
+    background: var(--light-beige);
+    margin-bottom: 0.5rem;
+    border-left: 3px solid var(--primary-beige);
+}
+
+.faq-title {
+    padding: 1rem;
+    cursor: pointer;
+    background-color: var(--light-beige);
+    font-weight: 600;
+    color: var(--dark-text);
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    width: 100%;
+    text-align: left;
+}
+
+.faq-title:hover {
+    background-color: #f0f0f0;
+}
+
+.faq-title::after {
+    content: "▶";
+    color: var(--primary-beige);
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-title[aria-expanded="true"]::after {
+    transform: rotate(90deg);
+}
+
+.faq-content {
+    padding: 1rem;
+    background: #fff;
+    color: var(--medium-text);
+    border-top: 1px solid var(--light-beige);
+}
+
+/* ========== Info Box ========== */
+.info-box {
+    background: var(--light-beige);
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary-red);
+    margin: 2rem 0;
+}
+
+.info-box h3 {
+    color: var(--primary-red);
+    margin-top: 0;
+}
+
+.info-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-box li {
+    padding: 0.6rem 0 0.6rem 1.5rem;
+    position: relative;
+    color: var(--medium-text);
+}
+
+.info-box li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-red);
+    font-weight: bold;
+}
+
+/* ========== Form Styles ========== */
+.form-group label {
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border: 1px solid #ddd;
+    padding: 0.8rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-beige);
+    box-shadow: 0 0 0 0.2rem rgba(212, 165, 116, 0.25);
+}
+
+.kontaktformular {
+    background: var(--light-beige);
+    padding: 2rem;
+    margin-top: 2rem;
+    border-left: 4px solid var(--primary-beige);
+}
+
+/* ========== Goals Grid ========== */
+.goal-card {
+    background: var(--primary-red);
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* ========== Appointment Methods ========== */
+.method-card {
+    border-top: 3px solid var(--primary-beige);
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.method-card:hover {
+    text-decoration: none;
+    color: inherit;
+    border-top-color: var(--primary-red);
+}
+
+.method-card h4 {
+    color: var(--primary-red);
+    margin-bottom: 0.5rem;
+}
+
+.method-card p {
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+/* ========== Footer ========== */
+.footer {
+    background-color: var(--primary-red);
+    color: #fff;
+    padding: 2rem 0 0 0;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    padding: 2rem 0;
+}
+
+.footer-section h4 {
+    color: #fff;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.footer-section a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    margin-top: 1rem;
+}
+
+/* ========== About Section ========== */
+.about-text {
+    background: var(--light-beige);
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary-beige);
+    margin-bottom: 1.5rem;
+}
+
+.about-text h3 {
+    color: var(--primary-red);
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+.specializations {
+    list-style: none;
+    padding: 0;
+}
+
+.specializations li {
+    padding: 0.8rem 0 0.8rem 1.5rem;
+    position: relative;
+    color: var(--medium-text);
+}
+
+.specializations li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary-beige);
+    font-weight: bold;
+}
+
+/* ========== Responsive Spacing ========== */
+@media (max-width: 768px) {
+    .section {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .hero {
+        padding: 1.5rem;
+    }
+
+    .section h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.3rem;
+    }
+}

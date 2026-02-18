@@ -1,0 +1,17 @@
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies (falls später genutzt)
+node_modules/
+package-lock.json
+
+# Env files
+.env
+.env.local
