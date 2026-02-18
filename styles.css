@@ -412,6 +412,40 @@ body {
     font-weight: bold;
 }
 
+/* ========== About Content Layout ========== */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.about-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(196, 30, 58, 0.15);
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .profile-image {
+        max-width: 100%;
+    }
+}
+
 /* ========== Responsive Spacing ========== */
 @media (max-width: 768px) {
     .section {
