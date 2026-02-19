@@ -1,7 +1,7 @@
 /* ========== Custom Colors ========== */
 :root {
-    --primary-red: #c41e3a;
-    --primary-beige: #d4a574;
+    --primary-red: #781516;
+    --primary-beige: #fde0c3;
     --light-beige: #fef5f1;
     --light-gray: #f8f8f8;
     --dark-text: #333;
@@ -347,22 +347,38 @@ body {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
+    display: block;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #f9f7f4;
+    transition: all 0.3s ease;
 }
 
 .method-card:hover {
     text-decoration: none;
     color: inherit;
     border-top-color: var(--primary-red);
+    background-color: #fff5f0;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    display: block;
 }
 
 .method-card h4 {
     color: var(--primary-red);
     margin-bottom: 0.5rem;
+    font-size: 1.1rem;
 }
 
 .method-card p {
     font-weight: 600;
     color: var(--dark-text);
+    margin-bottom: 0.5rem;
 }
 
 /* ========== Footer ========== */
