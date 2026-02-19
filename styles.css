@@ -45,14 +45,14 @@ body {
 }
 
 .navbar-logo {
-    width: 150px;
-    height: 70px;
-    max-width: 150px;
-    max-height: 70px;
+    height: 60px;      /* control size here */
+    width: auto;       /* keep correct aspect ratio */
+    max-height: 60px;
     border-radius: 12px;
     object-fit: contain;
     flex-shrink: 0;
 }
+
 
 .navbar-text {
     display: flex;
