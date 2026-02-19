@@ -37,6 +37,8 @@ body {
     font-weight: bold;
     font-size: 1.3rem !important;
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
     gap: 0.75rem;
     color: #fff !important;
@@ -45,8 +47,11 @@ body {
 .navbar-logo {
     width: 150px;
     height: 70px;
+    max-width: 150px;
+    max-height: 70px;
     border-radius: 12px;
     object-fit: contain;
+    flex-shrink: 0;
 }
 
 .navbar-text {
@@ -54,6 +59,8 @@ body {
     flex-direction: column;
     gap: 0;
     color: #fff;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .navbar-brand .tagline {
