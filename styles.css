@@ -83,6 +83,51 @@ body {
     border-bottom-color: #fff !important;
 }
 
+/* ========== Navbar Toggler Fix ========== */
+.navbar-toggler {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0.25rem 0;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+/* Custom hamburger icon */
+.navbar-toggler-icon {
+    background-image: none !important;
+    width: 26px;
+    height: 18px;
+    position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon {
+    display: block;
+    background-color: #fff;
+    height: 2px;
+    border-radius: 2px;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.navbar-toggler-icon {
+    top: 8px;
+}
+
+.navbar-toggler-icon::before {
+    top: -6px;
+}
+
+.navbar-toggler-icon::after {
+    top: 6px;
+}
+
+
 /* ========== Hero Section ========== */
 .hero {
     min-height: 100vh;
