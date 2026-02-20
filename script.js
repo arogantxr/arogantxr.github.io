@@ -27,7 +27,7 @@ function scrollToSection(sectionId) {
 window.addEventListener('scroll', () => {
     let current = '';
     const sections = document.querySelectorAll('section');
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
@@ -50,7 +50,7 @@ const observerOptions = {
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver(function(entries) {
+const observer = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
@@ -68,7 +68,7 @@ document.querySelectorAll('.section, .option-card, .step, .service-card, .contac
 
 // FAQ Toggle Functionality
 document.querySelectorAll('.faq-title').forEach(title => {
-    title.addEventListener('click', function() {
+    title.addEventListener('click', function () {
         const faqItem = this.parentElement;
         faqItem.classList.toggle('active');
     });
@@ -77,18 +77,18 @@ document.querySelectorAll('.faq-title').forEach(title => {
 // Contact Form Handler
 function handleFormSubmit(event) {
     event.preventDefault();
-    
+
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const subject = document.getElementById('subject').value;
     const message = document.getElementById('message').value;
-    
+
     // Construct mailto link
     const mailtoLink = `mailto:marlena@physio-steyr.at?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nTelefon: ${phone}\n\nNachricht:\n${message}`)}`;
-    
+
     window.location.href = mailtoLink;
-    
+
     // Show success message
     alert('Ihr Formular wird geöffnet. Sie können es nun an marlena@physio-steyr.at senden.');
     document.getElementById('contactForm').reset();
