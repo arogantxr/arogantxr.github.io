@@ -127,14 +127,14 @@ body {
     padding: 0.5rem;
     position: absolute !important;
     right: 1rem !important;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0.5rem !important;
+    transform: none;
+    z-index: 1000;
 }
 
 @media (min-width: 992px) {
     .navbar-toggler {
         position: static !important;
-        transform: none;
     }
 }
 
