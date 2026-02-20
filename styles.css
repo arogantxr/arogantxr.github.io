@@ -207,6 +207,67 @@ body {
     font-size: 0.9rem;
 }
 
+/* ========== Appointment Steps ========== */
+.appointment-box {
+    background: var(--light-beige);
+    border-left: 4px solid var(--primary-beige);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.appointment-box .simple-step {
+    border-top: none;
+    border: 1px solid var(--primary-beige);
+    border-radius: 12px;
+    box-shadow: none;
+    padding: 1.25rem;
+}
+
+.appointment-box .simple-step .number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--primary-red);
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.appointment-box .simple-step p {
+    margin-bottom: 0;
+    color: var(--medium-text);
+}
+
+/* Match Physio flow steps to appointment steps style */
+.step {
+    border-top: none;
+    border: 1px solid var(--primary-beige);
+    border-radius: 12px;
+    box-shadow: none;
+    padding: 1.25rem;
+}
+
+.step .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--primary-red);
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.step p {
+    margin-bottom: 0;
+    color: var(--medium-text);
+}
+
 /* ========== Cards ========== */
 .option-card,
 .contact-card,
@@ -352,21 +413,40 @@ body {
     border: none;
     width: 100%;
     text-align: left;
+    position: relative;
+    padding-right: 2.25rem;
 }
 
 .faq-title:hover {
-    background-color: #f0f0f0;
+    background-color: var(--primary-beige);
+}
+
+.faq-title:not(.collapsed) {
+    background-color: var(--primary-beige);
+    color: var(--dark-text);
+}
+
+.faq-section .accordion-button:focus {
+    box-shadow: none;
 }
 
 .faq-title::after {
     content: "▶";
-    color: var(--primary-beige);
-    font-size: 0.8rem;
+    color: #6b2b2b;
+    font-size: 0.9rem;
     transition: transform 0.3s ease;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .faq-title[aria-expanded="true"]::after {
-    transform: rotate(90deg);
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.faq-section .accordion-button::after {
+    background-image: none;
 }
 
 .faq-content {
